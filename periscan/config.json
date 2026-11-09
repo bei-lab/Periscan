@@ -1,0 +1,71 @@
+{
+  "detection": {
+    "celltypes": [
+      "CD4_Naive-CCR7",
+      "CD8_Temra-FGFBP2",
+      "CD56lowCD16high NK-LAG3",
+      "CD4_TCM-GPR183",
+      "CD14+ Monocyte",
+      "CD56lowCD16high NK-TYROBP",
+      "NaiveB-TCL1A",
+      "CD8_TEM-GZMK",
+      "CD8_Naive-CCR7"
+    ],
+    "class_order": [
+      "AD",
+      "CANCER",
+      "HC"
+    ],
+    "n_folds": 5,
+    "top_k": 100,
+    "architecture": {
+      "embed_dim": 128,
+      "attn_hidden": 64,
+      "head_hidden": 128,
+      "dropout": 0.4
+    },
+    "train": {
+      "lr": 0.001,
+      "weight_decay": 0.01,
+      "epochs": 60,
+      "warmup_epochs": 5,
+      "batch_size": 32,
+      "class_weight_power": 1.0,
+      "clip": 1.0
+    }
+  },
+  "origin": {
+    "celltypes": [
+      "CD4_Naive-CCR7",
+      "CD4_TCM-GPR183",
+      "CD8_Temra-FGFBP2",
+      "CD56lowCD16high NK-LAG3",
+      "CD14+ Monocyte",
+      "CD56lowCD16high NK-TYROBP",
+      "CD8_TEM-GZMK",
+      "CD8_Naive-CCR7",
+      "NaiveB-TCL1A"
+    ],
+    "classes": [
+      "BLCA",
+      "CESC",
+      "ESCA",
+      "HNSC",
+      "LIHC",
+      "LUCA",
+      "NPC",
+      "PAAD"
+    ],
+    "entropy_threshold": 0.7,
+    "n_folds": 5,
+    "train": {
+      "lr": 0.0005,
+      "weight_decay": 0.01,
+      "epochs": 500,
+      "batch_size": 32,
+      "clip": 1.0,
+      "cap_quantile": 0.95,
+      "num_workers": 0
+    }
+  }
+}
